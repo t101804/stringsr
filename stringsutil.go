@@ -140,6 +140,15 @@ func ContainsAny(s string, ss ...string) bool {
 	return false
 }
 
+func ContainsAnyDoubleArray(data []string, input ...string) bool {
+	for _, inputStr := range input {
+		if ContainsAny(inputStr, data...) {
+			return true
+		}
+	}
+	return false
+}
+
 // EqualFoldAny returns true if s is equal to any specified substring
 func EqualFoldAny(s string, ss ...string) bool {
 	for _, sss := range ss {
