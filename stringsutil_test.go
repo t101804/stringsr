@@ -194,6 +194,7 @@ func TestContainsAny(t *testing.T) {
 		"A b C": {Items: []string{"x"}, Result: false},
 	}
 	for str, test := range tests {
+		// fmt.Println(str, test.Items, ContainsAny(str, test.Items...))
 		res := ContainsAny(str, test.Items...)
 		require.Equalf(t, test.Result, res, "test: %+v", res)
 	}

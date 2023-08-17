@@ -133,8 +133,7 @@ func Reverse(s string) string {
 // ContainsAny returns true is s contains any specified substring
 func ContainsAny(s string, ss ...string) bool {
 	for _, sss := range ss {
-
-		if strings.Contains(strings.ToLower(sss), strings.ToLower(s)) { // make it all to lower to avoid sensitife case
+		if strings.Contains(strings.ToLower(s), strings.ToLower(sss)) { // make it all to lower to avoid sensitife case
 			return true
 		}
 	}
