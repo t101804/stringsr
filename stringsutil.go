@@ -133,13 +133,15 @@ func Reverse(s string) string {
 // ContainsAny returns true is s contains any specified substring
 func ContainsAny(s string, ss ...string) bool {
 	for _, sss := range ss {
-		if strings.Contains(s, sss) {
+
+		if strings.Contains(strings.ToLower(sss), strings.ToLower(s)) { // make it all to lower to avoid sensitife case
 			return true
 		}
 	}
 	return false
 }
 
+// ContainsAnyDoubleArray returns true is s contains (any) specifiec array
 func ContainsAnyDoubleArray(data ...string) func(input ...string) bool {
 	return func(input ...string) bool {
 		for _, inputStr := range input {
